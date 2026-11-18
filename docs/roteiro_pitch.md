@@ -1,29 +1,17 @@
-# Roteiro do pitch (3 a 5 minutos)
+# Roteiro de apresentação
 
-Este roteiro é uma ajuda. Grave sua própria demonstração e explique a
-interpretação com suas palavras, como exigido no projeto de recuperação.
+## 0:00–0:45 | Introdução
 
-**0:00–0:45 — Contexto**
-Apresente-se, explique a Linha 3 (BACEN) e o problema: acompanhar juros,
-inflação, câmbio e atividade de 2020–2023.
+Apresentar o Radar Macro e o objetivo da análise: observar a evolução dos juros, da inflação, do dólar e da atividade econômica brasileira entre 2020 e 2023.
 
-**0:45–1:30 — Engenharia de dados**
-Abra `src/etl.py` e o notebook. Mostre os códigos SGS 432, 433, 13522,
-1 e 24364; limpeza, normalização mensal, tratamento de nulos e cálculo
-do juro real ex-post.
+## 0:45–1:30 | Coleta e tratamento dos dados
 
-**1:30–3:45 — Data App publicado**
-Mostre o endereço público do Streamlit Cloud. Teste filtros, reset,
-quatro cartões, as abas de cada pergunta, correlações e exportação CSV.
-Diga números **lidos no app**, não inventados.
+Mostrar as séries do Banco Central utilizadas no projeto (432, 433, 13522, 1 e 24364), o arquivo `src/etl.py` e as principais etapas de limpeza e organização dos dados. Explicar o cálculo do juro real e a análise exploratória no Jupyter.
 
-**3:45–5:00 — Conclusões**
-Cite o maior juro real no recorte, média do dólar, variação IBC-Br e maior
-correlação; reconheça limites de causalidade. Termine apontando links
-para GitHub e aplicação.
+## 1:30–3:45 | Demonstração do painel
 
-## Publicar
+Abrir o aplicativo no Streamlit e apresentar os quatro indicadores principais. Navegar pelas abas de juros, câmbio, atividade econômica e correlação. Demonstrar os filtros de período, a opção de redefinir filtros e a exportação dos dados em CSV.
 
-- YouTube como não listado; ou Google Drive com acesso por link; ou LinkedIn.
-- Adicionar link real no README e no AVA.
-- Não utilizar vídeo automatizado que simule autoria ou execução.
+## 3:45–5:00 | Resultados e conclusão
+
+Destacar os resultados encontrados no recorte de 2020 a 2023, como o maior juro real, a média da PTAX, a evolução do IBC-Br e as correlações observadas. Comentar as limitações da análise e encerrar com as aplicações práticas do painel.

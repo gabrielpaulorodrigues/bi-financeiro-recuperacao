@@ -1,14 +1,11 @@
 # Radar Macro | Inteligência Econômica no Brasil (2020–2023)
 
-**Data App executivo • Visualização de Dados e Business Intelligence • Linha 3 — BACEN/SGS**
+**Visualização de Dados e Business Intelligence — Linha 3 (BACEN/SGS)**
 
-Este projeto individual investiga como a Selic, a inflação, o câmbio e o
-Índice de Atividade Econômica (IBC-Br) evoluíram entre 2020 e 2023, combinando
-ETL em Python, EDA em Jupyter, gráficos Plotly e aplicação Streamlit.
-
-> **Status:** código desenvolvido; publicação, apresentação e evidências
-> externas dependem de execução e validação. Não declare o trabalho entregue
-> antes de verificar o dashboard público, Trello e vídeo.
+O Radar Macro reúne indicadores econômicos do Brasil entre 2020 e 2023:
+Selic, IPCA, dólar PTAX e IBC-Br. A coleta e o tratamento dos dados foram
+organizados em Python, com análise exploratória no Jupyter e visualizações
+interativas no Streamlit.
 
 ## 1. Resumo executivo
 
@@ -55,13 +52,13 @@ e exportação de CSVs brutos e tratados.
 
 **Modelo:** tabela fato `macroeconomia_mensal`, uma linha por mês,
 com variáveis econômicas como medidas. `ptax_diaria` preserva granularidade
-diária para análise da trajetória do câmbio. Não se utilizam dados pessoais.
+diária para análise da trajetória do câmbio.
 
 ### Caminhos relativos e reprodutibilidade
 
 Todos os caminhos são definidos com `pathlib.Path` relativamente à raiz
 do repositório. O pipeline produz os arquivos em `data/raw/` e
-`data/processed/`. Não há caminho absoluto da máquina do estudante.
+`data/processed/`.
 
 ## 5. Dicionário de dados
 
@@ -77,16 +74,20 @@ do repositório. O pipeline produz os arquivos em `data/raw/` e
 
 ## 6. Tecnologias e justificativa
 
-Python e requests (API confiável); Pandas/NumPy (limpeza e estatística);
-Plotly Express (visualização e exploração); Streamlit (dashboard publicado,
-controles e KPIs); Jupyter (análise exploratória reprodutível);
-Git/GitHub (revisão, branches e histórico); PostgreSQL/Supabase (opcional,
-para arquitetura de banco remoto).
+| Tecnologia | Utilização |
+| --- | --- |
+| Python e Requests | Consulta à API SGS |
+| Pandas e NumPy | Tratamento dos dados e cálculos estatísticos |
+| Plotly | Gráficos interativos |
+| Streamlit | Interface, indicadores e filtros |
+| Jupyter Notebook | Análise exploratória |
+| Git e GitHub | Controle de versões |
+| PostgreSQL | Conexão opcional com banco de dados |
 
 ## 7. Resultados e evidências numéricas
 
-**Seção preenchida automaticamente** pelo script `python -m src.report`
-após a execução do ETL, usando valores **reais** das séries oficiais.
+Os resultados abaixo foram calculados com os dados do Banco Central
+após a execução do ETL. O script `src/report.py` atualiza esta seção.
 
 <!-- RESULTADOS_START -->
 Base validada: **48 meses**, **1002 observações diárias PTAX**. Recorte histórico de 2020 a 2023.
@@ -97,8 +98,8 @@ Base validada: **48 meses**, **1002 observações diárias PTAX**. Recorte hist�
 - **Pergunta 4:** Maior correlação absoluta de Pearson (níveis mensais): Selic meta (% a.a.) × Juro real ex-post (% a.a.) = +0.807. A tendência comum e a autocorrelação podem produzir associações espúrias; não há inferência causal.
 <!-- RESULTADOS_END -->
 
-Visualizações implementadas: (1) linhas de Selic, IPCA e juros reais;
-(2) série PTAX e sua média; (3) linha IBC-Br; (4) heatmap Pearson.
+O painel apresenta a evolução de Selic, IPCA e juros reais, o histórico
+da PTAX com sua média, o índice IBC-Br e uma matriz de correlação.
 
 ## 8. Discussão e limitações
 
@@ -119,9 +120,9 @@ econométricos antes de alegar impactos.
 
 ## 10. Aplicação e demonstração
 
-- **Streamlit Community Cloud:** [INSERIR LINK PÚBLICO DA APLICAÇÃO]
-- **Vídeo pitch (3–5 minutos):** [INSERIR LINK PÚBLICO DO VÍDEO]
-- **Capturas da aplicação:** [ADICIONAR PRINTS REAIS APÓS DEPLOY]
+- **Aplicação Streamlit:** [Radar Macro](https://bi-financeiro-recuperacao-emihmxehu9appqpbps8pn4s.streamlit.app)
+- **Apresentação em vídeo:** a incluir
+- **Capturas do painel:** a incluir
 
 ## 11. Executar localmente
 
@@ -138,9 +139,9 @@ python -m unittest discover -s tests -v
 streamlit run app.py
 ```
 
-Para executar o notebook: `jupyter notebook notebooks/eda_exploratoria.ipynb`
-(instale `notebook` se necessário). O notebook deve ser salvo com células
-executadas e gráficos visíveis para atender ao critério eliminatório.
+Para abrir a análise exploratória:
+`jupyter notebook notebooks/eda_exploratoria.ipynb`
+(instale o Jupyter Notebook, se necessário).
 
 **Opcional:** criar `.streamlit/secrets.toml` com uma conexão `postgresql`
 válida, conforme `.streamlit/secrets.toml.example`. Em ambiente sem
@@ -170,19 +171,14 @@ docs/roteiro_pitch.md
 
 ## 13. Gestão ágil e links do projeto
 
-- **Quadro público Trello:** [INSERIR LINK REAL]
-- **Print do Trello com cards concluídos:** [INSERIR IMAGEM REAL]
-- **Guia de cards:** [docs/trello_kanban.md](docs/trello_kanban.md)
-- **Roteiro do pitch:** [docs/roteiro_pitch.md](docs/roteiro_pitch.md)
-- **Deploy:** [INSERIR LINK REAL DO STREAMLIT]
-- **Vídeo:** [INSERIR LINK REAL DO PITCH]
-
-O quadro deve mostrar Backlog, A Fazer, Em Andamento e Concluído,
-com tarefas efetivamente movimentadas (somente uma em andamento).
+- **Quadro Trello:** a incluir
+- **Captura do quadro:** a incluir
+- [Planejamento das tarefas](docs/trello_kanban.md)
+- [Roteiro da apresentação](docs/roteiro_pitch.md)
 
 ## 14. Autoria e créditos
 
-**Autor:** Gabriel Paulo Rodrigues — projeto acadêmico individual.
+**Responsável pelo projeto:** Gabriel Paulo Rodrigues.
 Repositório: [GitHub](https://github.com/gabrielpaulorodrigues/bi-financeiro-recuperacao).
 
 **Referências:** Banco Central do Brasil (SGS e API pública);
@@ -191,5 +187,3 @@ documentação oficial de [Streamlit](https://docs.streamlit.io/),
 [Plotly](https://plotly.com/python/) e
 [Requests](https://requests.readthedocs.io/).
 
-A autoria, revisão das análises, apresentação e entrega final devem
-ser verificadas pelo estudante.
