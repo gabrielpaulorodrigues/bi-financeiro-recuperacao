@@ -1,0 +1,46 @@
+name: Preparar base oficial e notebook EDA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "requirements.txt"
+      - ".github/workflows/prepare-data.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  dados:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Instalar bibliotecas
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt nbconvert ipykernel
+      - name: Extrair séries oficiais BACEN / SGS
+        run: python -m src.etl
+      - name: Preencher README com métricas verificadas
+        run: python -m src.report
+      - name: Executar notebook e salvar saídas de células
+        run: |
+          jupyter nbconvert --to notebook --execute notebooks/eda_exploratoria.ipynb \
+            --output eda_exploratoria.ipynb --output-dir notebooks \
+            --ExecutePreprocessor.timeout=180
+      - name: Verificar testes do projeto
+        run: python -m unittest discover -s tests -v
+      - name: Versionar dados reais e notebook executado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw data/processed notebooks/eda_exploratoria.ipynb README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "data: registra séries oficiais e EDA executada"
+            git push
+          fi
