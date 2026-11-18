@@ -32,7 +32,7 @@ junto dos gráficos interativos.
 ## 3. Fonte dos dados e licença
 
 **Fonte primária:** [Sistema Gerenciador de Séries Temporais do Banco Central do Brasil (SGS)](https://www.bcb.gov.br/estatisticas/sgs).
-Consulta programática via [API pública SGS](https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json%26dataInicial=01/01/2020%26dataFinal=31/12/2023).
+Consulta programática via [API pública SGS](https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&dataInicial=01/01/2020&dataFinal=31/12/2023).
 Séries: **432** Selic Meta, **433** IPCA mensal, **13522** IPCA em 12 meses,
 **1** PTAX dólar americano venda e **24364** IBC-Br dessazonalizado.
 
