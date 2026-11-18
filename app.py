@@ -253,7 +253,4 @@ with aba_dados:
         ]))
 
 st.divider()
-st.caption(
-    "Fonte: BCB/SGS, séries 432, 433, 13522, 1 e 24364. "
-    "Exercício acadêmico, não recomendação de investimento."
-)
+st.caption("Fonte: Banco Central do Brasil (SGS), séries 432, 433, 13522, 1 e 24364.")
