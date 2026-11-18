@@ -89,8 +89,12 @@ para arquitetura de banco remoto).
 após a execução do ETL, usando valores **reais** das séries oficiais.
 
 <!-- RESULTADOS_START -->
-_Aguardando geração e validação do conjunto de dados oficial. Não há
-resultados numéricos inventados._
+Base validada: **48 meses**, **1002 observações diárias PTAX**. Recorte histórico de 2020 a 2023.
+
+- **Pergunta 1:** Selic: 4.50% no início do recorte e 11.75% no fim. Maior juro real ex-post observado: 10.27% em 06/2023 (Selic versus IPCA de 12 meses, Fisher).
+- **Pergunta 2:** PTAX média das 1002 observações do período: R$ 5.179/US$. Em 54.1% dos dias observados a cotação ficou acima dessa média.
+- **Pergunta 3:** O IBC-Br passou de 97.58 para 104.93 no recorte (+7.53%). A comparação visual com Selic é descritiva; não prova que os juros causaram a variação da atividade.
+- **Pergunta 4:** Maior correlação absoluta de Pearson (níveis mensais): Selic meta (% a.a.) × Juro real ex-post (% a.a.) = +0.807. A tendência comum e a autocorrelação podem produzir associações espúrias; não há inferência causal.
 <!-- RESULTADOS_END -->
 
 Visualizações implementadas: (1) linhas de Selic, IPCA e juros reais;

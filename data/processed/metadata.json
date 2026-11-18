@@ -1,0 +1,14 @@
+{
+  "origem": "Banco Central do Brasil — SGS",
+  "series": {
+    "selic": 432,
+    "ipca_mensal": 433,
+    "ipca_12m": 13522,
+    "ptax": 1,
+    "ibc_br": 24364
+  },
+  "inicio": "01/01/2020",
+  "fim": "31/12/2023",
+  "executado_em_utc": "2026-11-18T17:33:05.891631+00:00",
+  "observacoes_mensais": 48
+}
